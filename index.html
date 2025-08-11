@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Donnie Darko - Site Acessível</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        background-color: #f9f9f9;
+        color: #333;
+        font-size: 16px;
+        margin: 0;
+        padding: 0;
+        transition: background 0.3s, color 0.3s;
+    }
+
+    header {
+        background: #222;
+        color: white;
+        padding: 1.5rem;
+        text-align: center;
+    }
+
+    header h1 {
+        margin: 0;
+        font-size: 2rem;
+    }
+
+    header p {
+        margin: 0.3rem 0 1rem;
+    }
+
+    nav {
+        display: flex;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    nav button {
+        padding: 6px 12px;
+        border: none;
+        cursor: pointer;
+        background: #444;
+        color: white;
+        border-radius: 4px;
+        font-size: 1rem;
+        transition: background 0.3s;
+    }
+
+    nav button:hover {
+        background: #666;
+    }
+
+    section {
+        padding: 2rem;
+        max-width: 900px;
+        margin: auto;
+    }
+
+    h2 {
+        border-bottom: 2px solid #444;
+        padding-bottom: 0.3rem;
+    }
+
+    img {
+        max-width: 100%;
+        border-radius: 8px;
+        margin: 15px 0;
+        display: block;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        transition: transform 0.3s;
+    }
+
+    img:hover {
+        transform: scale(1.02);
+    }
+
+    footer {
+        text-align: center;
+        background: #222;
+        color: white;
+        padding: 1rem;
+        font-size: 0.9rem;
+        margin-top: 2rem;
+    }
+
+    /* Modo alto contraste */
+    body.alto-contraste {
+        background-color: #000;
+        color: #fff;
+    }
+
+    body.alto-contraste header {
+        background: #000;
+        color: yellow;
+    }
+
+    body.alto-contraste nav button {
+        background: yellow;
+        color: black;
+    }
+
+    body.alto-contraste h2 {
+        border-color: yellow;
+    }
+
+    body.alto-contraste a {
+        color: yellow;
+    }
+</style>
+</head>
+<body>
+    <header>
+        <h1>Donnie Darko</h1>
+        <p>Um mergulho no universo do clássico cult</p>
+        
+        <!-- Menu de acessibilidade -->
+        <nav>
+            <button onclick="aumentarFonte()">A+</button>
+            <button onclick="diminuirFonte()">A−</button>
+            <button onclick="toggleContraste()">Alto Contraste</button>
+        </nav>
+    </header>
+
+    <section>
+        <h2>Sobre o Filme</h2>
+        <p>
+            <strong>Donnie Darko</strong> (2001) é dirigido por Richard Kelly e mistura suspense psicológico, ficção científica e drama adolescente. 
+            Famoso por seu enredo complexo, estética sombria e atmosfera enigmática, o filme conquistou status de cult.
+        </p>
+        <img src="https://upload.wikimedia.org/wikipedia/en/d/db/Donnie_Darko_poster.jpg" 
+             alt="Pôster do filme Donnie Darko com a silhueta de um coelho assustador">
+    </section>
+
+    <section>
+        <h2>Personagens</h2>
+        <ul>
+            <li><strong>Donnie Darko</strong> — interpretado por Jake Gyllenhaal</li>
+            <li><strong>Frank</strong> — figura misteriosa de coelho</li>
+            <li><strong>Gretchen Ross</strong> — interpretada por Jena Malone</li>
+            <li><strong>Rose Darko</strong> — mãe de Donnie, interpretada por Mary McDonnell</li>
+        </ul>
+        <img src="https://upload.wikimedia.org/wikipedia/en/c/c6/Donnie_Darko_Cast.jpg" 
+             alt="Cena do filme Donnie Darko com alguns personagens principais">
+    </section>
+
+    <section>
+        <h2>Trilha Sonora</h2>
+        <p>
+            A trilha sonora é um dos pontos altos, com músicas icônicas dos anos 80 e a versão melancólica de 
+            <em>Mad World</em> por Gary Jules, que marcou os créditos finais.
+        </p>
+        <img src="https://upload.wikimedia.org/wikipedia/en/2/2d/Donnie_Darko_Soundtrack.jpg" 
+             alt="Capa do álbum da trilha sonora de Donnie Darko">
+    </section>
+
+    <footer>
+        <p>Imagens sob licença Creative Commons | Site exemplo com acessibilidade</p>
+    </footer>
+
+<script>
+    let tamanhoFonte = 16;
+
+    function aumentarFonte() {
+        tamanhoFonte += 2;
+        document.body.style.fontSize = tamanhoFonte + "px";
+    }
+
+    function diminuirFonte() {
+        if (tamanhoFonte > 10) {
+            tamanhoFonte -= 2;
+            document.body.style.fontSize = tamanhoFonte + "px";
+        }
+    }
+
+    function toggleContraste() {
+        document.body.classList.toggle("alto-contraste");
+    }
+</script>
+</body>
+</html>
